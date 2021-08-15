@@ -14,19 +14,9 @@
                             <div class="avatar-lg"><img src="<?=base_url()?>assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
                             <div class="u-text">
                             <h4><?=$this->ion_auth->user()->row()->first_name?></h4>
-                                <p class="text-muted"><?=$this->ion_auth->user()->row()->email?></p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
+                                <p class="text-muted"><?=$this->ion_auth->user()->row()->email?></p><a href="<?=base_url('Dashboard/logout')?>" class="btn btn-rounded btn-danger btn-sm">Log Out</a>
                             </div>
                         </div>
-                    </li>
-                    <li>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">My Profile</a>
-                        <a class="dropdown-item" href="#">My Balance</a>
-                        <a class="dropdown-item" href="#">Inbox</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Account Setting</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="<?=base_url('Dashboard/logout')?>">Logout</a>
                     </li>
                 </ul>
             </li>

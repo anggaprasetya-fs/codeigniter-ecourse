@@ -26,7 +26,7 @@
 <div id="infoMessage"><?php echo $message;?></div>
 	<div class="wrapper wrapper-login">
 		<div class="container container-login animated fadeIn">
-			<h3 class="text-center">Sign In To Admin</h3>
+			<h3 class="text-center">Sign In to Dashboard</h3>
       <form action="<?=base_url('auth/login')?>" method="post">
 			<div class="login-form">
 				<div class="form-group">

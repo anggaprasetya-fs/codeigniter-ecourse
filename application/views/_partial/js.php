@@ -44,6 +44,52 @@
 <!-- Azzara JS -->
 <script src="<?=base_url()?>assets/js/ready.min.js"></script>
 
-<!-- Azzara DEMO methods, don't include it in your project! -->
-<script src="<?=base_url()?>assets/js/setting-demo.js"></script>
-<script src="<?=base_url()?>assets/js/demo.js"></script>
+<!-- Other JS -->
+
+<script  type="text/javascript">
+
+function userUpdate()
+{
+    var data = new FormData($('#formUpdateUser')[0]);
+
+    $.ajax({
+        method: "POST",
+        url: "<?=base_url('Profile/update')?>",
+        data: data,
+        dataType: 'json',
+        processData: false,
+        contentType: false,
+        success: function(data)
+        {
+            if (data == true) {
+                swal({
+                    title: "Success!",
+                    text: "You have successfully updated your profile!",
+                    icon: "success",
+                    buttons: {
+                        confirm: {
+                            text: "Confirm",
+                            value: true,
+                            visible: true,
+                            className: "btn btn-success",
+                            closeModal: true
+                        }
+                    }
+                }).then(function() {
+                    window.location = "<?=base_url('Profile')?>"
+                });
+            } else {
+                swal("Error", "You failed to update profile!", {
+                    icon : "error",
+                    buttons: {        			
+                        confirm: {
+                            className : 'btn btn-danger'
+                        }
+                    },
+                });
+            }
+        }
+    });
+}
+
+</script>
