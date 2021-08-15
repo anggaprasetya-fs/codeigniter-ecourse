@@ -23,39 +23,38 @@
 	<link rel="stylesheet" href="<?=base_url()?>assets/css/azzara.min.css">
 </head>
 <body class="login">
-<div id="infoMessage"><?php echo $message;?></div>
 	<div class="wrapper wrapper-login">
 		<div class="container container-login animated fadeIn">
 			<h3 class="text-center">Sign In to Dashboard</h3>
-      <form action="<?=base_url('auth/login')?>" method="post">
-			<div class="login-form">
-				<div class="form-group">
-					<label for="username" class="identity"><b><?php echo lang('login_identity_label', 'identity');?></b></label>
-					<input id="username" name="identity" type="text" class="form-control" required>
-				</div>
-				<div class="form-group">
-					<label for="password" class="placeholder"><b> <?php echo lang('login_password_label', 'password');?></b></label>
-					<a href="#" class="link float-right"><?php echo lang('login_forgot_password');?></a>
-					<div class="position-relative">
-						<input id="password" name="password" type="password" class="form-control" required>
-						<div class="show-password">
-							<i class="flaticon-interface"></i>
+      		<form action="<?=base_url('auth/login')?>" method="post">
+				<div class="login-form">
+					<div class="form-group">
+						<label for="username" class="identity"><b><?php echo lang('login_identity_label', 'identity');?></b></label>
+						<input id="username" name="identity" type="text" class="form-control" required>
+					</div>
+					<div class="form-group">
+						<label for="password" class="placeholder"><b> <?php echo lang('login_password_label', 'password');?></b></label>
+						<a href="#" class="link float-right"><?php echo lang('login_forgot_password');?></a>
+						<div class="position-relative">
+							<input id="password" name="password" type="password" class="form-control" required>
+							<div class="show-password">
+								<i class="flaticon-interface"></i>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="form-group form-action-d-flex mb-3">
-					<div class="">
-            <?php echo form_checkbox('remember', '1', FALSE, 'id="remember"');?>
-						<label class="custom-control-label m-0" for="rememberme"><?php echo lang('login_remember_label', 'remember');?></label>
+					<div class="form-group form-action-d-flex mb-3">
+						<div class="">
+							<?php echo form_checkbox('remember', '1', FALSE, 'id="remember"');?>
+							<label class="custom-control-label m-0" for="rememberme"><?php echo lang('login_remember_label', 'remember');?></label>
+						</div>
+					<?php echo form_submit('submit', lang('login_submit_btn'), 'class=btn btn-primary');?>
 					</div>
-          <?php echo form_submit('submit', lang('login_submit_btn'), 'class=btn btn-primary');?>
+					<div class="login-account">
+						<span class="msg">Don't have an account yet ?</span>
+						<a href="#" id="show-signup" class="link">Sign Up</a>
+					</div>
 				</div>
-				<div class="login-account">
-					<span class="msg">Don't have an account yet ?</span>
-					<a href="#" id="show-signup" class="link">Sign Up</a>
-				</div>
-			</div>
-      </form>
+      		</form>
 		</div>
 
 		<div class="container container-signup animated fadeIn">
@@ -104,10 +103,26 @@
 			</div>
 		</div>
 	</div>
-	<script src="<?=base_url()?>assets/js/core/jquery.3.2.1.min.js"></script>
-	<script src="<?=base_url()?>assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-	<script src="<?=base_url()?>assets/js/core/popper.min.js"></script>
-	<script src="<?=base_url()?>assets/js/core/bootstrap.min.js"></script>
-	<script src="<?=base_url()?>assets/js/ready.js"></script>
+	
+	<?php $this->load->view('_partial/js')?>
+
+	<?php
+
+	if ($message) {
+	?>
+	<script type="text/javascript">
+		swal("Error", "<?=$message?>", {
+			icon : "error",
+			buttons: {        			
+				confirm: {
+					className : 'btn btn-danger'
+				}
+			},
+		});
+	</script>
+	<?php
+	}
+
+	?>
 </body>
 </html>

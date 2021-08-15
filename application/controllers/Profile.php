@@ -7,7 +7,12 @@ class Profile extends CI_Controller
         parent::__construct();
         
         if (!$this->ion_auth->logged_in()) {
-            redirect('auth/login', 'refresh');
+            redirect('Auth/login', 'refresh');
+        } else {
+            if (!$this->ion_auth->is_admin()) {
+                $this->session->set_flashdata('message', 'You must be an admin to view this page!');
+                redirect('Auth/login', 'refresh');
+            }
         }
     }
 

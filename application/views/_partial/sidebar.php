@@ -41,17 +41,17 @@
                     </span>
                     <h4 class="text-section">Components</h4>
                 </li>
-                <li class="nav-item">
-                    <a data-toggle="collapse" href="#base">
-                        <i class="fas fa-layer-group"></i>
-                        <p>Base</p>
+                <li class="nav-item <?=$this->uri->segment(1) === 'ClassLesson' ? 'active' : '';?>">
+                    <a data-toggle="collapse" href="#class">
+                        <i class="fas fa-chalkboard"></i>
+                        <p>Class</p>
                         <span class="caret"></span>
                     </a>
-                    <div class="collapse" id="base">
+                    <div class="collapse <?=$this->uri->segment(1) === 'ClassLesson' ? 'show' : '';?>" id="class">
                         <ul class="nav nav-collapse">
-                            <li>
-                                <a href="components/avatars.html">
-                                    <span class="sub-item">Avatars</span>
+                            <li class="<?=$this->uri->segment(1) === 'ClassLesson' ? 'active' : '';?>">
+                                <a href="<?=base_url('ClassLesson')?>">
+                                    <span class="sub-item">List</span>
                                 </a>
                             </li>
                         </ul>
