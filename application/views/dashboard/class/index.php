@@ -26,7 +26,7 @@
                     <div class="col-md-12">
                         <div class="card card-with-nav">
                             <div class="card-header"><br>
-                                <button type="button" class="btn btn-warning btn-sm"><i class="fas fa-plus"></i>  Create Class</button>
+                                <a href="<?=base_url('ClassLesson/createClass')?>" class="btn btn-warning btn-sm"><i class="fas fa-plus"></i>  Create Class</a>
                             </div>
                             <div class="card-body">
                             <div class="table-responsive">

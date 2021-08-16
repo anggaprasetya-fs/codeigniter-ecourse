@@ -52,4 +52,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller']        = 'Dashboard';
 $route['404_override']              = '';
 $route['translate_uri_dashes']      = FALSE;
+
+// Login
 $route['login']                     = 'Auth/login';
+
+// Class
+$route['ClassLesson/listClass']     = 'ClassLesson/index';
+$route['ClassLesson/createClass']   = 'ClassLesson/createLessonPage';

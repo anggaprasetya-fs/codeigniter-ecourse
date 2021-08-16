@@ -49,8 +49,13 @@
                     </a>
                     <div class="collapse <?=$this->uri->segment(1) === 'ClassLesson' ? 'show' : '';?>" id="class">
                         <ul class="nav nav-collapse">
-                            <li class="<?=$this->uri->segment(1) === 'ClassLesson' ? 'active' : '';?>">
-                                <a href="<?=base_url('ClassLesson')?>">
+                            <li class="<?=$this->uri->segment(2) === 'createClass' ? 'active' : '';?>">
+                                <a href="<?=base_url('ClassLesson/createClass')?>">
+                                    <span class="sub-item">Create</span>
+                                </a>
+                            </li>
+                            <li class="<?=$this->uri->segment(2) == 'listClass' ? 'active' : '';?>">
+                                <a href="<?=base_url('ClassLesson/listClass')?>">
                                     <span class="sub-item">List</span>
                                 </a>
                             </li>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Azzara Bootstrap 4 Admin Dashboard</title>
+	<title>E-Course Admin Dashboard</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="<?=base_url()?>assets/img/icon.ico" type="image/x-icon"/>
 
@@ -22,6 +22,7 @@
 	<link rel="stylesheet" href="<?=base_url()?>assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?=base_url()?>assets/css/azzara.min.css">
 
-	<!-- CSS Just for demo purpose, don't include it in your project -->
-	<link rel="stylesheet" href="<?=base_url()?>assets/css/demo.css">
+	<!-- CSS DatePicker -->
+	<link rel="stylesheet" href="<?=base_url()?>assets/plugins/datepicker/css/bootstrap-datepicker.css">
+	<link rel="stylesheet" href="<?=base_url()?>assets/plugins/datepicker/css/bootstrap-datepicker.min.css">
 </head>

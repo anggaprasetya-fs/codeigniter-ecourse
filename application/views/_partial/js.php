@@ -44,10 +44,74 @@
 <!-- Azzara JS -->
 <script src="<?=base_url()?>assets/js/ready.min.js"></script>
 
+<!-- CkEditor -->
+<script src="<?=base_url()?>assets/plugins/ckeditor/ckeditor.js"></script>
+
+<!-- DatePciker -->
+<script src="<?=base_url()?>assets/plugins/datepicker/js/bootstrap-datepicker.js"></script>
+<script src="<?=base_url()?>assets/plugins/datepicker/js/bootstrap-datepicker.min.js"></script>
+
 <!-- Other JS -->
 
-<script  type="text/javascript">
+<script type="text/javascript">
+// Class
+function addClass()
+{
+    CKEDITOR.instances['description'].updateElement()
 
+    var data    = new FormData($('#formAddClass')[0]);
+
+    $.ajax({
+        method: "POST",
+        url: "<?=base_url('ClassLesson/add')?>",
+        data: data,
+        // data: $('#formAddClass').serialize(),
+        // dataType: 'json',
+        async: false,
+        processData: false,
+        contentType: false,
+        success: function(data)
+        {
+            console.log(data);
+            if (data == 'true'){
+                swal({
+                    title: "Success!",
+                    text: "You have successfully add your class!",
+                    icon: "success",
+                    buttons: {
+                        confirm: {
+                            text: "Confirm",
+                            value: true,
+                            visible: true,
+                            className: "btn btn-success",
+                            closeModal: true
+                        }
+                    }
+                })  
+            } else if(data.status == 'false') {
+                swal("Error", "You failed to add your class!", {
+                    icon : "error",
+                    buttons: {        			
+                        confirm: {
+                            className : 'btn btn-danger'
+                        }
+                    },
+                });
+            } else {
+                swal("Error", "You failed to add your class [Contact Your Developer]!", {
+                    icon : "error",
+                    buttons: {        			
+                        confirm: {
+                            className : 'btn btn-danger'
+                        }
+                    },
+                });
+            }
+        }
+    });
+}
+
+// Class
 $(document).ready(function(){
     $('#basic-datatables').DataTable({
     });
@@ -77,6 +141,7 @@ $(document).ready(function(){
     });
 });
 
+// User
 function userUpdate()
 {
     var data = new FormData($('#formUpdateUser')[0]);

@@ -122,7 +122,6 @@
 	</script>
 	<?php
 	}
-
 	?>
 </body>
 </html>
