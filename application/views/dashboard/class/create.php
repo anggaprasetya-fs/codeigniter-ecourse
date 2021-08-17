@@ -144,13 +144,13 @@ $author = $user->username.' - '.$user->first_name.' '.$user->last_name;
 CKEDITOR.replace('description');
 
 $('#start').datepicker({
-    format: "dd-mm-yyyy",
+    format: "yyyy-mm-dd",
     todayBtn: "linked",
     clearBtn: true,
     autoclose: true
 });
 $('#end').datepicker({
-    format: "dd-mm-yyyy",
+    format: "yyyy-mm-dd",
     todayBtn: "linked",
     clearBtn: true,
     autoclose: true

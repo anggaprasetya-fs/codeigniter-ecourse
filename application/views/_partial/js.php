@@ -54,10 +54,11 @@
 <!-- Other JS -->
 
 <script type="text/javascript">
+
 // Class
 function addClass()
 {
-    CKEDITOR.instances['description'].updateElement()
+    CKEDITOR.instances['description'].updateElement();
 
     var data    = new FormData($('#formAddClass')[0]);
 
